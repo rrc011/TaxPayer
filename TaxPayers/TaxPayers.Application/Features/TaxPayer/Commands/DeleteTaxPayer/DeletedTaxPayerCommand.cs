@@ -3,7 +3,7 @@ using MediatR;
 using TaxPayers.Domain.Common;
 using TaxPayers.Shared;
 
-namespace TaxPayers.Application.Features.TaxPayer.Commands.DeleteTaxPayer
+namespace TaxPayers.Application.Features.TaxPayer
 {
     public class DeletedTaxPayerCommand : BaseEntity, IRequest<Result<int>>, IMapFrom<Domain.Entities.TaxPayer>
     {

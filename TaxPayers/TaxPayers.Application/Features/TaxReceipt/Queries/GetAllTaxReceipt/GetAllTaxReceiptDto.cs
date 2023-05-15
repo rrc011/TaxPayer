@@ -1,4 +1,4 @@
-﻿using TaxPayers.Application.Features.TaxPayer.Queries;
+﻿using TaxPayers.Application.Features.TaxPayer;
 using TaxPayers.Domain.Common;
 
 namespace TaxPayers.Application.Features.TaxReceipt.Queries

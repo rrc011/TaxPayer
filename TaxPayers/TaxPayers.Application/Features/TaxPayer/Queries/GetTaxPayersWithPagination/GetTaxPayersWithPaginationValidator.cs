@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace TaxPayers.Application.Features.TaxPayer.Queries
+namespace TaxPayers.Application.Features.TaxPayer
 {
     public class GetTaxPayersWithPaginationValidator : AbstractValidator<GetTaxPayersWithPaginationQuery>
     {

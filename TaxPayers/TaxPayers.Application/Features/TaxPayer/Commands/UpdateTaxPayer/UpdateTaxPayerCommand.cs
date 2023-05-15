@@ -4,7 +4,7 @@ using TaxPayers.Domain.Common;
 using TaxPayers.Domain.Common.Enums;
 using TaxPayers.Shared;
 
-namespace TaxPayers.Application.Features.TaxPayer.Commands.UpdateTaxPayer
+namespace TaxPayers.Application.Features.TaxPayer
 {
     public class UpdateTaxPayerCommand : BaseEntity, IRequest<Result<int>>, IMapFrom<Domain.Entities.TaxPayer>
     {

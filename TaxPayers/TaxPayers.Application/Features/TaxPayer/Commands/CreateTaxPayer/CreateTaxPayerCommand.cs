@@ -3,7 +3,7 @@ using MediatR;
 using TaxPayers.Domain.Common.Enums;
 using TaxPayers.Shared;
 
-namespace TaxPayers.Application.Features.TaxPayer.Commands
+namespace TaxPayers.Application.Features.TaxPayer
 {
     public record CreateTaxPayerCommand : IRequest<Result<int>>, IMapFrom<Domain.Entities.TaxPayer>
     {

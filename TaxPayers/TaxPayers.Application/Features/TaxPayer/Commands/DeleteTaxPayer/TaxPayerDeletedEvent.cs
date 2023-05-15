@@ -1,6 +1,6 @@
 ﻿using TaxPayers.Domain.Common;
 
-namespace TaxPayers.Application.Features.TaxPayer.Commands.DeleteTaxPayer
+namespace TaxPayers.Application.Features.TaxPayer
 {
     public class TaxPayerDeletedEvent : BaseEvent
     {

@@ -1,9 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using TaxPayers.Application.Features.TaxPayer.Commands;
-using TaxPayers.Application.Features.TaxPayer.Commands.DeleteTaxPayer;
-using TaxPayers.Application.Features.TaxPayer.Commands.UpdateTaxPayer;
-using TaxPayers.Application.Features.TaxPayer.Queries;
+using TaxPayers.Application.Features.TaxPayer;
 using TaxPayers.Shared;
 
 namespace TaxPayers.WebAPI.Controllers

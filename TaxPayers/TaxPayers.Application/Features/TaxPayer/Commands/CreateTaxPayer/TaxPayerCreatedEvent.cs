@@ -1,6 +1,6 @@
 ﻿using TaxPayers.Domain.Common;
 
-namespace TaxPayers.Application.Features.TaxPayer.Commands
+namespace TaxPayers.Application.Features.TaxPayer
 {
     public class TaxPayerCreatedEvent : BaseEvent
     {

@@ -33,7 +33,7 @@ dotnet ef database update
 dotnet run
 ```
 
-El backend estará disponible en la URL [http://localhost:5000](http://localhost:5000).
+El backend estará disponible en la URL [http://localhost:8578/swagger](http://localhost:8578/swagger).
 
 ## Configuración del Frontend
 

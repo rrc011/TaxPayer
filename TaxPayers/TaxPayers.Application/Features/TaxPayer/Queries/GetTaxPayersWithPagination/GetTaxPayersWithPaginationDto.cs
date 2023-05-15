@@ -1,6 +1,6 @@
 ﻿using TaxPayers.Domain.Common;
 
-namespace TaxPayers.Application.Features.TaxPayer.Queries
+namespace TaxPayers.Application.Features.TaxPayer
 {
     public class GetTaxPayersWithPaginationDto : BaseEntity
     {

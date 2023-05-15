@@ -4,7 +4,7 @@ using MediatR;
 using TaxPayers.Application.Extensions;
 using TaxPayers.Shared;
 
-namespace TaxPayers.Application.Features.TaxPayer.Queries
+namespace TaxPayers.Application.Features.TaxPayer
 {
     public record GetTaxPayersWithPaginationQuery : IRequest<PaginatedResult<GetTaxPayersWithPaginationDto>>
     {

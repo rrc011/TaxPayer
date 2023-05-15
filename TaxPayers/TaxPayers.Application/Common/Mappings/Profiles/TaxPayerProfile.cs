@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
-using TaxPayers.Application.Features.TaxPayer.Queries;
 using TaxPayers.Application.Extensions;
+using TaxPayers.Application.Features.TaxPayer;
+using TaxPayers.Domain.Entities;
 
 namespace TaxPayers.Application.Common.Mappings.Profiles
 {
@@ -8,7 +9,7 @@ namespace TaxPayers.Application.Common.Mappings.Profiles
     {
         public TaxPayerProfile()
         {   
-            CreateMap<Domain.Entities.TaxPayer, GetTaxPayersWithPaginationDto>()
+            CreateMap<TaxPayer, GetTaxPayersWithPaginationDto>()
                 .ForMember(dest => dest.TypeDescription, opt =>
                     opt.MapFrom(src => src.Type.GetEnumDescription()))
                 .ForMember(dest => dest.StatusDescription, opt =>
