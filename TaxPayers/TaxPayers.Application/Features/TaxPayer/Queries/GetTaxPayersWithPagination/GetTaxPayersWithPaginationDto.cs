@@ -2,7 +2,7 @@
 
 namespace TaxPayers.Application.Features.TaxPayer.Queries
 {
-    public class GetTaxPayersWithPaginationDto 
+    public class GetTaxPayersWithPaginationDto : BaseEntity
     {
         public string RNC { get; set; }
         public string Name { get; set; }

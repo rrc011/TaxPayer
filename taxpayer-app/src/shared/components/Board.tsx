@@ -12,8 +12,8 @@ const Board: React.FC<{ details: any[] }> = ({ details }) => {
                                 'col-sm w-50': Boolean(item.cols) == false,
                                 [`${item.cols}`]: Boolean(item.cols),
                             })} key={item.label}>
-                                <div className='flex'>
-                                    <i className={clsx(`pt-1 mr-2 ${item.icon}`)} aria-hidden="true"></i>
+                                <div className='d-flex'>
+                                    <i className={clsx(`pt-1 mt-1 me-2 ${item.icon}`)} aria-hidden="true"></i>
                                     <div>
                                         <span className='fs-5 text-dark'>{item.label}</span>
                                         <p>{item.data}</p>

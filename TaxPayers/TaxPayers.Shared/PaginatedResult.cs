@@ -2,6 +2,8 @@
 {
     public class PaginatedResult<T> : Result<T>
     {
+
+        public PaginatedResult() { }
         public PaginatedResult(List<T> data)
         {
             Data = data;

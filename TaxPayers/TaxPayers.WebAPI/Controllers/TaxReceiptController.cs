@@ -18,7 +18,7 @@ namespace TaxPayers.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<Result<List<GetAllTaxReceiptDto>>>> GetPlayersWithPagination([FromQuery] GetAllTaxReceiptQuery query)
+        public async Task<ActionResult<Result<List<GetAllTaxReceiptDto>>>> GetTaxReceipt([FromQuery] GetAllTaxReceiptQuery query)
         {
             var validator = new GetAllTaxReceiptValidator();
 

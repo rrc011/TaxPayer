@@ -34,7 +34,7 @@ namespace TaxPayers.Application.Features.TaxPayer.Queries
         public async Task<PaginatedResult<GetTaxPayersWithPaginationDto>> Handle(GetTaxPayersWithPaginationQuery query, CancellationToken cancellationToken)
         {
             return await _unitOfWork.Repository<Domain.Entities.TaxPayer>().Entities
-                   .OrderBy(x => x.Name)
+                   .OrderByDescending(x => x.CreatedDate)
                    .ProjectTo<GetTaxPayersWithPaginationDto>(_mapper.ConfigurationProvider)
                    .ToPaginatedListAsync(query.PageNumber, query.PageSize, cancellationToken);
         }

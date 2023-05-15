@@ -46,25 +46,25 @@ export const TaxReceiptPage = () => {
                 setTaxPayer([
                     {
                         label: 'Nombre del contribuyente:',
-                        icon: 'fas fa-calendar-edit',
+                        icon: 'fa-solid fa-user',
                         cols: 'col-md-3 pt-2',
                         data: payer.name,
                     },
                     {
                         label: 'Tipo:',
-                        icon: 'fas fa-calendar-edit',
+                        icon: 'fa-solid fa-box',
                         cols: 'col-md-3 pt-2',
                         data: payer.typeDescription,
                     },
                     {
                         label: 'Estado:',
-                        icon: 'fas fa-calendar-edit',
+                        icon: 'fa-solid fa-square-check',
                         cols: 'col-md-3 pt-2',
                         data: payer.statusDescription,
                     },
                     {
                         label: 'RNC:',
-                        icon: 'fas fa-calendar-edit',
+                        icon: 'fa-solid fa-address-card',
                         cols: 'col-md-3 pt-2',
                         data: payer.rnc,
                     }
@@ -84,39 +84,42 @@ export const TaxReceiptPage = () => {
                 <Button variant="outline-primary" style={{ height: 'fit-content' }} onClick={() => setShowCreateOrEditModal(true)}>Crear</Button>
             </PageTitle>
 
-            {taxPayer && <Board details={taxPayer} />}
 
-            {data && data.length === 0 ? <Empty /> : <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>NFC</th>
-                        <th>Monto</th>
-                        <th>Itbis</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data && data.map((item: any, index: number) => {
-                        return (<>
-                            <tr key={item.id}>
-                                <td>{index + 1}</td>
-                                <td>{item.ncf}</td>
-                                <td>{formattedPrice(item.amount)}</td>
-                                <td>{formattedPrice(item.tax)}</td>
-                            </tr>
-                        </>)
-                    })
-                    }
-                </tbody>
-                {data && <tfoot>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td className='fw-bold'>{formattedPrice(data?.reduce((acc: number, item: any) => acc + item.amount, 0))}</td>
-                        <td className='fw-bold'>{formattedPrice(data?.reduce((acc: number, item: any) => acc + item.tax, 0))}</td>
-                    </tr>
-                </tfoot>}
-            </Table>}
+
+            {!data ? <Empty /> : <>
+                {taxPayer && <Board details={taxPayer} />}
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>NFC</th>
+                            <th>Monto</th>
+                            <th>Itbis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data && data.map((item: any, index: number) => {
+                            return (<>
+                                <tr key={item.id}>
+                                    <td>{index + 1}</td>
+                                    <td>{item.ncf}</td>
+                                    <td>{formattedPrice(item.amount)}</td>
+                                    <td>{formattedPrice(item.tax)}</td>
+                                </tr>
+                            </>)
+                        })
+                        }
+                    </tbody>
+                    {data && <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td className='fw-bold'>{formattedPrice(data?.reduce((acc: number, item: any) => acc + item.amount, 0))}</td>
+                            <td className='fw-bold'>{formattedPrice(data?.reduce((acc: number, item: any) => acc + item.tax, 0))}</td>
+                        </tr>
+                    </tfoot>}
+                </Table>
+            </>}
             <CreateTaxReceipt show={showCreateOrEditModal} setShow={setShowCreateOrEditModal} reload={() => fetchData(PAGE_NUMBER)} />
         </>
     )
